@@ -6,6 +6,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useSession } from 'next-auth/react'
 import useSWR from 'swr'
+import { BASE_URL } from '@/app/utils/connections'
 
 const fetcher = async (url) => {
     const res = await fetch(url)
@@ -22,7 +23,7 @@ const fetcher = async (url) => {
 
 function Comment({postSlug}) {
     const {status} = useSession()
-    const {data,mutate,isLoading} = useSWR(`http://localhost:3000/api/comments?postSlug=${postSlug}`, fetcher)
+    const {data,mutate,isLoading} = useSWR(`${BASE_URL}/api/comments?postSlug=${postSlug}`, fetcher)
     const [description, setDescription] = useState("")
     const handleSubmit = async ()=>{
         await fetch('/api/comments',{

@@ -2,9 +2,10 @@ import React from 'react'
 import styles from './categorylist.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
+import { BASE_URL } from '@/app/utils/connections'
 
 const getCategory = async ()=> {
-  const res = await fetch('http://localhost:3000/api/categories', {cache: "no-store"})
+  const res = await fetch(`${BASE_URL}/api/categories`, {cache: "no-store"})
 
   if (!res.ok){
     throw new Error("failed to get categories")
