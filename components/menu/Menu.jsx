@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { BASE_URL } from '@/app/utils/connections'
 
 const getPostTheMostPopular = async ()=>{
-  const url = `${BASE_URL}/api/posts/popular`
+  const url = `${BASE_URL}api/posts/popular`
   const res = await fetch(url,{cache: "no-store"})
 
   if(!res.ok){
@@ -16,7 +16,7 @@ const getPostTheMostPopular = async ()=>{
 }
 
 const getCategory = async ()=> {
-  const res = await fetch(`${BASE_URL}/api/categories`, {cache: "default"})
+  const res = await fetch(`${BASE_URL}api/categories`, {cache: "default"})
 
   if (!res.ok){
     throw new Error("failed to get categories")

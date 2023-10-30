@@ -5,7 +5,7 @@ import Comment from '@/components/comment/Comment'
 import { BASE_URL } from '../utils/connections';
 
 const getSinglePost = async (slug)=>{
-    const res = await fetch(`${BASE_URL}/api/posts/${slug}`, {
+    const res = await fetch(`${BASE_URL}api/posts/${slug}`, {
       cache: "no-store",
     });
   

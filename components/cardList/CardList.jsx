@@ -5,7 +5,7 @@ import CardSinglPost from '../cardSiglePost/CardSinglPost'
 import { BASE_URL } from '@/app/utils/connections'
 
 const getPosts = async (page, catg)=> {
-  const url = `${BASE_URL}/api/posts?page=${page}&cat=${catg || ""}`
+  const url = `${BASE_URL}api/posts?page=${page}&cat=${catg || ""}`
   const res = await fetch(url,{ cache: "no-store"})
 
   if (!res.ok){

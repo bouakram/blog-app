@@ -23,7 +23,7 @@ const fetcher = async (url) => {
 
 function Comment({postSlug}) {
     const {status} = useSession()
-    const {data,mutate,isLoading} = useSWR(`${BASE_URL}/api/comments?postSlug=${postSlug}`, fetcher)
+    const {data,mutate,isLoading} = useSWR(`${BASE_URL}api/comments?postSlug=${postSlug}`, fetcher)
     const [description, setDescription] = useState("")
     const handleSubmit = async ()=>{
         await fetch('/api/comments',{
