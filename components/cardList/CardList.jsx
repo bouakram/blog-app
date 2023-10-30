@@ -24,9 +24,12 @@ async function CardList({page, catg}) {
     <div className={styles.container}>
       <h1 className={styles.title}>Recent Posts</h1>
       <div className={styles.posts}>
-        {(posts && posts.length > 0) && posts?.map((post, index)=>(
+        {Array.isArray(posts) && posts.length > 0 ? posts?.map((post, index)=>(
           <CardSinglPost key={index} ukey={index} data={post}/>
-        ))}
+        ))
+        :
+        null
+        }
       </div>
       <Pagination page={page} hasPrev={hasPrev} hasNext={hasNext}/>
     </div>

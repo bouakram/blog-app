@@ -34,7 +34,7 @@ async function Menu() {
       <h1 className={styles.title}>Most Popular</h1>
       <div className={styles.items}>
         {
-          (post && post.length > 0) && post?.map((post, index)=>(
+          Array.isArray(post) && post.length > 0 ? post?.map((post, index)=>(
           <Link key={index} href={`/${post.slug}`} className={styles.item}>
             <div className={styles.textContainer}>
               <div className={styles.top}>
@@ -49,6 +49,8 @@ async function Menu() {
             </div>
           </Link>
           ))
+          : 
+          null
         }
       </div>
 
@@ -56,9 +58,11 @@ async function Menu() {
       <h1 className={styles.title}>Categories</h1>
       <div className={styles.categoryList}>
         {
-          (cat && cat.length > 0) && cat?.map((catg, index)=>(
+          Array.isArray(cat) && cat.length > 0 ? cat?.map((catg, index)=>(
             <Link key={index} href={`/blog?category=${catg.slug}`} className={`${styles.categoryItem} ${styles[catg.slug]}`}>{catg.slug}</Link>
           ))
+          :
+          null
         }
       </div>
 
