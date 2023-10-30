@@ -24,7 +24,7 @@ async function CardList({page, catg}) {
     <div className={styles.container}>
       <h1 className={styles.title}>Recent Posts</h1>
       <div className={styles.posts}>
-        {posts?.map((post, index)=>(
+        {posts && posts?.map((post, index)=>(
           <CardSinglPost key={index} ukey={index} data={post}/>
         ))}
       </div>
