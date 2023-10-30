@@ -1,0 +1,97 @@
+.container {
+
+}
+
+.editor {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-height:calc(100vh - 420px);
+    position: relative;
+}
+
+.button {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.secButton{
+    border-radius: 50%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.add {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    position: absolute;
+    width: 100%;
+    left: 50px;
+    background-color: transparent;
+    z-index: 10;
+}
+
+.input {
+    padding-left: 15px;
+    font-size: 65px;
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: var(--textColor);
+}
+
+.input::placeholder {
+    color: var(--softTextColor);
+}
+
+.inputDesc {
+    padding-left: 15px;
+    margin: 30px 0px;    
+    font-size: 24px;
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: var(--textColor);
+}
+
+.inputDesc::placeholder {
+    color: var(--softTextColor);
+}
+
+.textEditor {
+    margin: 60px 0px;
+    width: 100%;
+}
+
+.select {
+    margin-bottom: 50px;
+    padding: 16px 20px;
+    width: 100%;
+    background-color: transparent;
+    color: var(--softTextColor);
+    cursor: pointer;
+}
+
+.buttonSubmit {
+    width: 100%;
+    padding: 16px 20px;
+    background-color: teal;
+    color: white;
+    font-weight: 500;
+    font-size: 18;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+}
+
+.buttonSubmit:hover {
+    background-color: rgba(0, 128, 128, 0.596);
+}

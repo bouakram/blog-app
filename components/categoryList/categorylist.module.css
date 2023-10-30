@@ -1,0 +1,60 @@
+.container {
+
+}
+
+.title {
+    margin: 50px 0px;
+    font-family: var(--headFont);
+}
+
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+
+.category {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    text-transform: capitalize;
+    width: 15%;
+    height: 80px;
+    border-radius: 10px;
+}
+
+.category.tutorial {
+    background-color: #7fb88133;
+}
+.category.coding {
+    background-color: #57c4ff31;
+}
+.category.hack-and-trick {
+    background-color: #da85c731;
+}
+.category.styles {
+    background-color: #ffb04f45;
+}
+
+@media screen and (max-width: 1200px) {
+    .category {
+        width: 20%
+    }
+}
+@media screen and (max-width: 1024px) {
+    .category {
+        width: 25%
+    }
+}
+@media screen and (max-width: 760px) {
+    .category {
+        width: 45%
+    }
+}
+@media screen and (max-width: 640) {
+    .category {
+        width: 100%
+    }
+}

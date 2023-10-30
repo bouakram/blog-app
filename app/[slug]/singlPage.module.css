@@ -1,0 +1,105 @@
+.contaienr {
+    
+}
+
+.infoContainer {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.textContainer {
+    flex: 1;
+}
+
+.title {
+    font-family: var(--headFont);
+    font-size: 54px;
+    margin-bottom: 50px;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.userImageContianer{
+    width: 50px;
+    height: 50px;
+    position: relative;
+}
+
+.avatar {
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.userTextContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: var(--softTextColor);
+}
+
+.userName {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.imageContainer {
+    flex: 1;
+    height: 350px;
+    position: relative;
+}
+
+.image {
+    object-fit: cover;
+}
+
+.content {
+    margin-top: 50px;
+}
+
+.description{
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.content h1 {
+    padding: 18px 0px
+}
+
+@media screen and (max-width: 1200px) {
+    .infoContainer {
+        flex-direction: column-reverse;
+    }
+    .textContainer {
+        text-align: left;
+    }
+    .user {
+        flex: auto;
+        justify-content: flex-start;
+    }
+    .imageContainer {
+        flex: auto;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .textContainer {
+        text-align: left;
+    }
+    .user {
+        flex: auto;
+        justify-content: flex-start;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .imageContainer {
+        flex: 1;
+    }
+}

@@ -1,0 +1,129 @@
+.container {
+    margin-top: 60px;
+    flex: 2
+}
+
+.subtitle {
+    color: var(--softTextColor);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.title {
+    font-family: var(--headFont);
+    font-size: 28px;
+}
+
+.items {
+    margin-top: 35px;
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.item {
+    /* padding: 5px; */
+    display: flex;
+    align-items: center;
+    gap: 20px;;
+}
+
+/* .item:hover {
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
+} */
+
+.imageContainer {
+    position: relative;
+    flex: 1;
+    aspect-ratio: 1/1;
+}
+
+.image {
+    border-radius: 50%;
+    border: 3px solid lightgray;
+    object-fit: cover;
+}
+
+.textContainer {
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.category {
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 12px;
+    color: white;
+    width: max-content;
+}
+
+.categoryList {
+    margin-top: 35px;
+    margin-bottom: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.categoryItem {
+    padding: 10px 25px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.categoryItem.styles {
+    background-color: #ff7857;
+}
+.categoryItem.coding {
+    background-color: #775aec;
+}
+.categoryItem.tutorial {
+    background-color: #7fb881;
+}
+.categoryItem.hack-and-trick {
+    background-color: #da85c7;
+}
+.category.styles {
+    background-color: #ff7857;
+}
+.category.coding {
+    background-color: #775aec;
+}
+.category.tutorial {
+    background-color: #7fb881;
+}
+.category.hack-and-trick {
+    background-color: #da85c7;
+}
+
+.views{
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: var(--softTextColor);
+}
+
+.postTitle {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--softTextColor);
+}
+
+.detail {
+    font-size: 12px;
+}
+
+.date {
+    color: var(--softTextColor);
+}
