@@ -31,7 +31,7 @@ async function Featured() {
         <div className={styles.textContainer}>
           <h1 className={styles.postTitle}>{posts[0].titles}</h1>
           <p className={styles.postDesc}>{posts[0].description}</p>
-          <Link href={`/${posts.slug}`}><button className={styles.button}>Read More</button></Link>
+          <Link href={`/${posts[0].slug}`}><button className={styles.button}>Read More</button></Link>
         </div>
       </div>
       </>
