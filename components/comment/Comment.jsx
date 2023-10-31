@@ -46,7 +46,7 @@ function Comment({postSlug}) {
         }
         {
         isLoading ? "loading ..." :
-        data.map((comment, index)=>(
+        Array.isArray(data) && data.length > 0 ? data.map((comment, index)=>(
         <div key={index} className={styles.comments}>
             <div className={styles.comment}>
                 <div className={styles.user}>
@@ -64,6 +64,8 @@ function Comment({postSlug}) {
             </div>
         </div>
         ))
+        :
+        null
         }
     </div>
   )
