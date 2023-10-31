@@ -34,7 +34,7 @@ export const POST = async (req)=>{
         const post = await prisma.post.create({
             data: {...body, userEmail : session.user.email}
         })
-        return new NextResponse(JSON.stringify(comment, {status: 200}))
+        return new NextResponse(JSON.stringify(post, {status: 200}))
     } catch (error) {
         console.log(error)
         return new NextResponse(JSON.stringify({message: "somthing went wrong"}, {status: 500}))
