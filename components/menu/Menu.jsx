@@ -4,21 +4,21 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { BASE_URL } from '@/app/utils/connections'
 
-const getPostTheMostPopular = async ()=>{
+const getPostTheMostPopular = async () => {
   const url = `${BASE_URL}api/posts/popular`
-  const res = await fetch(url,{cache: "no-store"})
+  const res = await fetch(url, { cache: "no-store" })
 
-  if(!res.ok){
+  if (!res.ok) {
     throw new Error("failed to fetch popular posts")
   }
 
   return res.json()
 }
 
-const getCategory = async ()=> {
-  const res = await fetch(`${BASE_URL}api/categories`, {cache: "default"})
+const getCategory = async () => {
+  const res = await fetch(`${BASE_URL}api/categories`, { cache: "default" })
 
-  if (!res.ok){
+  if (!res.ok) {
     throw new Error("failed to get categories")
   }
 
@@ -34,23 +34,25 @@ async function Menu() {
       <h1 className={styles.title}>Most Popular</h1>
       <div className={styles.items}>
         {
-          Array.isArray(post) && post.length > 0 ? post?.map((post, index)=>(
-          <Link key={index} href={`/${post.slug}`} className={styles.item}>
-            <div className={styles.textContainer}>
-              <div className={styles.top}>
-                <div className={`${styles.category} ${styles[post?.catgSlug]}`}>{post.catgSlug}</div>
-                <div className={styles.views}>{post.views} view</div>
+          Array.isArray(post) && post.length > 0 ? post?.map((post, index) => (
+            <Link key={index} href={`/${post.slug}`} className={styles.item}>
+              <div className={styles.textContainer}>
+                <div className={styles.top}>
+                  <div className={`${styles.category} ${styles[post?.catgSlug]}`}>{post.catgSlug}</div>
+                  <div className={styles.views}>{post.views} view</div>
+                </div>
+                <h3 className={styles.postTitle}>{post?.titles}</h3>
+                <div className={styles.detail}>
+                  <span className={styles.username}>{post?.user.name}</span>
+                  <span className={styles.date}> - {post?.createdAt.substring(0, 10)}</span>
+                </div>
               </div>
-              <h3 className={styles.postTitle}>{post?.titles}</h3>
-              <div className={styles.detail}>
-                <span className={styles.username}>{post?.user.name}</span>
-                <span className={styles.date}> - {post?.createdAt.substring(0, 10)}</span>
-              </div>
-            </div>
-          </Link>
+            </Link>
           ))
-          : 
-          null
+            :
+            <div>
+              <p>No blog created yet!</p>
+            </div>
         }
       </div>
 
@@ -58,11 +60,11 @@ async function Menu() {
       <h1 className={styles.title}>Categories</h1>
       <div className={styles.categoryList}>
         {
-          Array.isArray(cat) && cat.length > 0 ? cat?.map((catg, index)=>(
+          Array.isArray(cat) && cat.length > 0 ? cat?.map((catg, index) => (
             <Link key={index} href={`/blog?category=${catg.slug}`} className={`${styles.categoryItem} ${styles[catg.slug]}`}>{catg.slug}</Link>
           ))
-          :
-          null
+            :
+            null
         }
       </div>
 
