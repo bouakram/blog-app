@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './menu.module.css'
 import Link from 'next/link'
-import Image from 'next/image'
+// import Image from 'next/image'
 import { BASE_URL } from '@/app/utils/connections'
 
 const getPostTheMostPopular = async () => {

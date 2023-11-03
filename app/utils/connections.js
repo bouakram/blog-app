@@ -1,1 +1,1 @@
-export const BASE_URL = process.env.API
+export const BASE_URL = process.env.API || 'http://localhost:3000/'
